@@ -589,12 +589,14 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), padding 0.6s ease;
-    padding: 0 var(--spacing-xl);
+    padding: 0 var(--spacing-xxl);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .card-content.active {
     max-height: 6000px;
-    padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-xl);
+    padding: var(--spacing-lg) var(--spacing-xxl) var(--spacing-xl);
 }
 
 .card-content p {
