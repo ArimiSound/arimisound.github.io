@@ -526,8 +526,7 @@ body {
 }
 
 .card-header {
-    padding: var(--spacing-md);
-    padding-right: calc(var(--spacing-md) + 0.5rem);
+    padding: 1.5rem 2rem;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -590,17 +589,14 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), padding 0.6s ease;
-    padding: 0 var(--spacing-md);
-    padding-right: calc(var(--spacing-md) + 0.5rem);
+    padding: 0 2rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    hyphens: auto;
 }
 
 .card-content.active {
     max-height: 8000px;
-    padding: var(--spacing-md);
-    padding-right: calc(var(--spacing-md) + 0.5rem);
+    padding: 1.5rem 2rem 2rem;
 }
 
 .card-content p {
@@ -791,8 +787,8 @@ footer p {
     
     .card-header,
     .card-content.active {
-        padding-left: var(--spacing-sm);
-        padding-right: var(--spacing-sm);
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
 
