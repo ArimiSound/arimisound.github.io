@@ -526,7 +526,7 @@ body {
 }
 
 .card-header {
-    padding: var(--spacing-lg) var(--spacing-xxl);
+    padding: var(--spacing-lg) var(--spacing-lg);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -589,14 +589,14 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1), padding 0.6s ease;
-    padding: 0 var(--spacing-xxl);
+    padding: 0 var(--spacing-lg);
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
 
 .card-content.active {
-    max-height: 6000px;
-    padding: var(--spacing-lg) var(--spacing-xxl) var(--spacing-xl);
+    max-height: 8000px;
+    padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
 }
 
 .card-content p {
@@ -787,8 +787,8 @@ footer p {
     
     .card-header,
     .card-content.active {
-        padding-left: var(--spacing-md);
-        padding-right: var(--spacing-md);
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
     }
 }
 
