@@ -526,7 +526,7 @@ body {
 }
 
 .card-header {
-    padding: var(--spacing-lg) var(--spacing-xl);
+    padding: var(--spacing-lg) var(--spacing-xxl);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
