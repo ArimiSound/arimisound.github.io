@@ -595,7 +595,7 @@ body {
 }
 
 .card-content.active {
-    max-height: 8000px;
+    max-height: 9000px;
     padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
 }
 
