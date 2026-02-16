@@ -614,18 +614,18 @@ body {
 
 /* Highlighted keywords */
 .highlight {
-    color: var(--accent-sage);
-    font-weight: 600;
+    color: #6B8E6F;
+    font-weight: 700;
 }
 
 .frequency {
-    color: var(--accent-terracotta);
-    font-weight: 600;
+    color: #C17E5D;
+    font-weight: 700;
 }
 
 .benefit {
-    font-weight: 600;
-    color: var(--text-dark);
+    font-weight: 700;
+    color: #3D3530;
 }
 
 .card-content ul {
