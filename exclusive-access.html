@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Healing Sessions - Arimi Sound Healer</title>
+    <meta name="description" content="Get free access to exclusive healing tracks and unreleased sessions. Join our private healing community.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Free Exclusive Healing Tracks | Arimi">
+    <meta property="og:description" content="Get instant access to 5 exclusive healing sessions with Solfeggio frequencies and binaural beats.">
+    <meta property="og:image" content="https://musicforthesoul.live/profile.jpg">
+    
+    <link rel="icon" type="image/jpeg" href="profile.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .exclusive-container {
+            max-width: 700px;
+            margin: 3rem auto;
+            text-align: center;
+        }
+
+        .exclusive-hero {
+            background: linear-gradient(135deg, rgba(168, 184, 159, 0.12) 0%, rgba(201, 185, 150, 0.08) 100%);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+        }
+
+        .exclusive-badge {
+            display: inline-block;
+            background: var(--gradient-accent);
+            color: white;
+            padding: 0.6rem 1.8rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .exclusive-hero h1 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            font-family: var(--font-display);
+        }
+
+        .exclusive-hero p {
+            font-size: 1.2rem;
+            color: var(--text-medium);
+            margin-bottom: 2rem;
+            font-family: var(--font-body);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin: 3rem 0;
+            text-align: left;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-sage);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .benefit-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+        }
+
+        .benefit-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .benefit-description {
+            color: var(--text-medium);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .tracks-preview {
+            background: rgba(143, 168, 137, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .tracks-preview h3 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .track-preview-item {
+            text-align: left;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(143, 168, 137, 0.2);
+        }
+
+        .track-preview-item:last-child {
+            border-bottom: none;
+        }
+
+        .track-preview-title {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .track-preview-meta {
+            font-size: 0.9rem;
+            color: var(--text-medium);
+        }
+
+        .cta-section {
+            background: var(--gradient-accent);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+            font-family: var(--font-display);
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-family: var(--font-body);
+        }
+
+        .btn-huge {
+            background: white;
+            color: var(--accent-sage);
+            padding: 1.5rem 4rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-huge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .trust-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .trust-badge-icon {
+            font-size: 2rem;
+        }
+
+        .trust-badge-text {
+            font-size: 0.9rem;
+            color: var(--text-medium);
+        }
+
+        .form-container {
+            max-width: 640px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container iframe {
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .exclusive-container {
+                margin: 1rem;
+            }
+
+            .exclusive-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .btn-huge {
+                padding: 1.2rem 3rem;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-waves"></div>
+    
+    <div class="container">
+        <div class="exclusive-container">
+            
+            <!-- Hero Section -->
+            <div class="exclusive-hero">
+                <span class="exclusive-badge">✨ FREE EXCLUSIVE ACCESS</span>
+                <h1>Unlock Your Private Healing Library</h1>
+                <p>Five unreleased tracks for deep sleep, stress release, heart opening, and spiritual awakening. Feel the frequencies, heal your soul. 🙏🏼✨</p>
+            </div>
+
+            <!-- Benefits -->
+            <div class="benefits-grid">
+                
+                <div class="benefit-card">
+                    <div class="benefit-header">
+                        <div class="benefit-icon">🎵</div>
+                        <div class="benefit-title">5 Exclusive Tracks</div>
+                    </div>
+                    <p class="benefit-description">
+                        Unreleased sessions featuring powerful Solfeggio frequencies (432 Hz, 528 Hz, 639 Hz, 852 Hz) and binaural beats crafted specifically for our private community.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-header">
+                        <div class="benefit-icon">📱</div>
+                        <div class="benefit-title">Play Anywhere, Anytime</div>
+                    </div>
+                    <p class="benefit-description">
+                        Access your private player on any device. Control playback from your lock screen and notifications. No app needed.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-header">
+                        <div class="benefit-icon">🔄</div>
+                        <div class="benefit-title">Regular Updates</div>
+                    </div>
+                    <p class="benefit-description">
+                        New exclusive tracks added regularly. Your access never expires - bookmark your player page and return anytime.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-header">
+                        <div class="benefit-icon">🌟</div>
+                        <div class="benefit-title">100% Free Forever</div>
+                    </div>
+                    <p class="benefit-description">
+                        No credit card required. No subscriptions. No hidden fees. Just pure healing frequencies shared with love.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Tracks Preview -->
+            <div class="tracks-preview">
+                <h3>📋 Five Healing Journeys for Your Soul:</h3>
+                
+                <div class="track-preview-item">
+                    <div class="track-preview-title">🌙 Deep Sleep Journey | 432 Hz</div>
+                    <div class="track-preview-meta">30 min • Release insomnia and anxiety • Delta waves guide you into deep, restorative sleep</div>
+                </div>
+
+                <div class="track-preview-item">
+                    <div class="track-preview-title">💫 Sacred Heart Opening | 639 Hz</div>
+                    <div class="track-preview-meta">25 min • Heal emotional wounds • Open your heart to love and forgiveness</div>
+                </div>
+
+                <div class="track-preview-item">
+                    <div class="track-preview-title">🌿 Morning Awakening | 528 Hz</div>
+                    <div class="track-preview-meta">20 min • DNA repair and cellular healing • Start your day grounded and centered</div>
+                </div>
+
+                <div class="track-preview-item">
+                    <div class="track-preview-title">🔮 Third Eye Activation | 852 Hz</div>
+                    <div class="track-preview-meta">35 min • Awaken intuition and inner wisdom • Connect with higher consciousness</div>
+                </div>
+
+                <div class="track-preview-item">
+                    <div class="track-preview-title">🌊 Ocean of Tranquility | 174 Hz</div>
+                    <div class="track-preview-meta">40 min • Release physical pain and tension • Deep relaxation and body healing</div>
+                </div>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">✅</div>
+                    <div class="trust-badge-text">No Spam</div>
+                </div>
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">🔒</div>
+                    <div class="trust-badge-text">Privacy Protected</div>
+                </div>
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">⚡</div>
+                    <div class="trust-badge-text">Instant Access</div>
+                </div>
+            </div>
+
+            <!-- CTA Section with Embedded Form -->
+            <div class="cta-section">
+                <h2>Ready to Begin Your Journey?</h2>
+                <p>Enter your details below to get instant access to your private healing library</p>
+            </div>
+
+            <!-- Embedded Google Form -->
+            <div class="form-container">
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSc-qWEWue696-eh_g3IXzNomxUwsFC3UK1CPyB1yyVJNpH2-Q/viewform?embedded=true" 
+                    width="100%" 
+                    height="650" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0"
+                    id="googleForm">
+                    Loading…
+                </iframe>
+            </div>
+
+            <!-- Instructions Notice -->
+            <div style="text-align: center; margin: 2rem 0; padding: 1rem; background: rgba(168, 184, 159, 0.1); border-radius: 10px;">
+                <p style="color: var(--text-medium); font-size: 0.9rem; margin: 0;">
+                    ✨ After submitting, you'll be redirected to your exclusive player
+                </p>
+            </div>
+
+            <!-- Back Link -->
+            <div style="margin-top: 3rem;">
+                <a href="index.html" style="color: var(--accent-sage); text-decoration: none; font-weight: 600;">
+                    ← Back to Home
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Auto-redirect after Google Form submission
+        // This listens for the form submission and redirects to the player
+        window.addEventListener('message', function(event) {
+            // Check if message is from Google Forms
+            if (event.origin === 'https://docs.google.com') {
+                // Check if it's a form submission event
+                if (event.data && event.data.includes('formResponse')) {
+                    // Wait 2 seconds to show success message, then redirect
+                    setTimeout(function() {
+                        window.location.href = 'exclusive-player.html';
+                    }, 2000);
+                }
+            }
+        });
+
+        // Alternative: Detect if iframe content changes (form submitted)
+        const iframe = document.getElementById('googleForm');
+        if (iframe) {
+            iframe.addEventListener('load', function() {
+                try {
+                    // Check if we're on the confirmation page
+                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                    if (iframeDoc.body.innerHTML.includes('Your response has been recorded')) {
+                        setTimeout(function() {
+                            window.location.href = 'exclusive-player.html';
+                        }, 2000);
+                    }
+                } catch (e) {
+                    // Cross-origin restriction - can't access iframe content
+                    // This is expected, the postMessage method above should work
+                }
+            });
+        }
+    </script>
+</body>
+</html>
