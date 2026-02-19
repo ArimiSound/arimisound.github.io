@@ -100,7 +100,8 @@
             background: rgba(143, 168, 137, 0.1);
             padding: 2rem;
             border-radius: 15px;
-            margin: 2rem 0;
+            margin: 2rem auto;
+            max-width: 700px;
         }
 
         .tracks-preview h3 {
@@ -192,8 +193,8 @@
         }
 
         .form-container {
-            max-width: 640px;
-            margin: 2rem auto;
+            max-width: 100%;  /* Match parent width */
+            margin: 0 auto;  /* Remove extra margin */
             background: white;
             padding: 2rem;
             border-radius: 20px;
@@ -236,6 +237,12 @@
                 padding: 1.2rem 3rem;
                 font-size: 1.1rem;
             }
+            
+            /* Benefits stack on mobile */
+            .exclusive-container > div[style*="grid-template-columns: repeat(4, 1fr)"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1.5rem !important;
+            }
         }
     </style>
 </head>
@@ -255,83 +262,88 @@
                 </a>
             </div>
 
-            <!-- Quick Benefits - Simplified -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 3rem 0;">
+            <!-- Quick Benefits - 4 in one row -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin: 3rem 0; max-width: 900px;">
                 
                 <div style="text-align: center;">
                     <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎵</div>
                     <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">5 Exclusive Tracks</div>
-                    <div style="font-size: 0.9rem; color: var(--text-medium);">Unreleased sessions with Solfeggio frequencies</div>
+                    <div style="font-size: 0.9rem; color: var(--text-medium);">Unreleased sessions</div>
                 </div>
 
                 <div style="text-align: center;">
                     <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📱</div>
                     <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Play Anywhere</div>
-                    <div style="font-size: 0.9rem; color: var(--text-medium);">Control from your lock screen</div>
+                    <div style="font-size: 0.9rem; color: var(--text-medium);">Lock screen controls</div>
                 </div>
 
                 <div style="text-align: center;">
                     <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔄</div>
                     <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">Regular Updates</div>
-                    <div style="font-size: 0.9rem; color: var(--text-medium);">New tracks added regularly</div>
+                    <div style="font-size: 0.9rem; color: var(--text-medium);">New tracks added</div>
                 </div>
 
                 <div style="text-align: center;">
                     <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🌟</div>
                     <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem;">100% Free Forever</div>
-                    <div style="font-size: 0.9rem; color: var(--text-medium);">No credit card required</div>
+                    <div style="font-size: 0.9rem; color: var(--text-medium);">No credit card</div>
                 </div>
 
             </div>
 
-            <!-- Tracks Preview - Compact -->
+            <!-- Tracks Preview - More Complete -->
             <div class="tracks-preview">
-                <h3 style="margin-bottom: 1.5rem;">📋 Five Healing Journeys:</h3>
+                <h3 style="margin-bottom: 1.5rem; text-align: center;">📋 Five Healing Journeys for Your Soul:</h3>
                 
                 <div class="track-preview-item">
                     <div class="track-preview-title">🌙 Deep Sleep Journey | 432 Hz</div>
-                    <div class="track-preview-meta">Release insomnia • 30 min</div>
+                    <div class="track-preview-meta">Release insomnia and anxiety • Delta waves guide you into deep, restorative sleep • 30 min</div>
                 </div>
 
                 <div class="track-preview-item">
                     <div class="track-preview-title">💫 Sacred Heart Opening | 639 Hz</div>
-                    <div class="track-preview-meta">Heal emotional wounds • 25 min</div>
+                    <div class="track-preview-meta">Heal emotional wounds • Open your heart to love and forgiveness • 25 min</div>
                 </div>
 
                 <div class="track-preview-item">
                     <div class="track-preview-title">🌿 Morning Awakening | 528 Hz</div>
-                    <div class="track-preview-meta">DNA repair • 20 min</div>
+                    <div class="track-preview-meta">DNA repair and cellular healing • Start your day grounded and centered • 20 min</div>
                 </div>
 
                 <div class="track-preview-item">
                     <div class="track-preview-title">🔮 Third Eye Activation | 852 Hz</div>
-                    <div class="track-preview-meta">Awaken intuition • 35 min</div>
+                    <div class="track-preview-meta">Awaken intuition and inner wisdom • Connect with higher consciousness • 35 min</div>
                 </div>
 
                 <div class="track-preview-item">
                     <div class="track-preview-title">🌊 Ocean of Tranquility | 174 Hz</div>
-                    <div class="track-preview-meta">Release pain • 40 min</div>
+                    <div class="track-preview-meta">Release physical pain and tension • Deep relaxation and body healing • 40 min</div>
                 </div>
             </div>
 
-            <!-- CTA Section with Embedded Form -->
-            <div class="cta-section" id="form">
-                <h2>Ready to Begin Your Journey?</h2>
-                <p>Enter your details below to get instant access to your private healing library</p>
-            </div>
+            <!-- CTA + Form Section - Aligned -->
+            <div style="max-width: 800px; margin: 3rem auto;">
+                
+                <!-- CTA Header -->
+                <div class="cta-section" id="form" style="margin-bottom: 1.5rem;">
+                    <h2>Ready to Begin Your Journey?</h2>
+                    <p>Enter your details below to get instant access to your private healing library</p>
+                </div>
 
-            <!-- Embedded Google Form -->
-            <div class="form-container">
-                <iframe 
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSc-qWEWue696-eh_g3IXzNomxUwsFC3UK1CPyB1yyVJNpH2-Q/viewform?embedded=true" 
-                    width="100%" 
-                    height="650" 
-                    frameborder="0" 
-                    marginheight="0" 
-                    marginwidth="0"
-                    id="googleForm">
-                    Loading…
-                </iframe>
+                <!-- Embedded Google Form -->
+                <div class="form-container">
+                    <iframe 
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSc-qWEWue696-eh_g3IXzNomxUwsFC3UK1CPyB1yyVJNpH2-Q/viewform?embedded=true" 
+                        width="100%" 
+                        height="650" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0"
+                        id="googleForm">
+                        Loading…
+                    </iframe>
+                </div>
+
             </div>
 
             <!-- Instructions Notice -->
