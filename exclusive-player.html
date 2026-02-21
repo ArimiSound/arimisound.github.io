@@ -57,22 +57,16 @@
             font-size: 1rem;
         }
 
-        .track-info {
-            text-align: center;
-            margin: 2rem 0;
-            padding: 2rem;
-            background: rgba(143, 168, 137, 0.1);
+        .player-notice {
+            background: rgba(168, 184, 159, 0.1);
+            padding: 1rem 1.5rem;
             border-radius: 15px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-sage);
         }
 
-        .track-info h2 {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            color: var(--text-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .track-info p {
+        .player-notice p {
+            margin: 0.3rem 0;
             color: var(--text-medium);
             font-size: 0.9rem;
         }
@@ -81,6 +75,92 @@
             margin: 2rem 0;
             border-radius: 15px;
             overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .tracks-description {
+            background: rgba(143, 168, 137, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .tracks-description h2 {
+            font-family: var(--font-display);
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .track-list {
+            list-style: none;
+        }
+
+        .track-list li {
+            padding: 0.5rem 0;
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(143, 168, 137, 0.2);
+        }
+
+        .track-list li:last-child {
+            border-bottom: none;
+        }
+
+        .track-list strong {
+            color: var(--text-dark);
+        }
+
+        .bookmark-notice {
+            background: rgba(201, 185, 150, 0.1);
+            padding: 0.8rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 1.5rem;
+            border: 1px solid var(--accent-terracotta);
+        }
+
+        .bookmark-notice p {
+            margin: 0;
+            color: var(--text-medium);
+            font-size: 0.85rem;
+        }
+
+        .donate-section {
+            background: var(--gradient-accent);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 2rem 0;
+            color: white;
+        }
+
+        .donate-section h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .donate-section p {
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .donate-btn {
+            display: inline-block;
+            background: white;
+            color: var(--accent-sage);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .donate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
         .back-link {
@@ -99,14 +179,11 @@
             color: var(--accent-terracotta);
         }
 
-        .test-note {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            border-radius: 10px;
-            padding: 1rem;
-            margin: 2rem 0;
-            text-align: center;
-            color: #856404;
+        @media (max-width: 768px) {
+            .player-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
         }
     </style>
 
@@ -123,25 +200,46 @@
             <p>Thank you for joining our healing community</p>
         </div>
 
-        <div class="test-note">
-            🧪 <strong>TEST - Track 1 Only</strong><br>
-            Testing SoundCloud integration with Root Chakra track
+        <div class="player-notice">
+            <p>📱 <strong>Mobile Tip:</strong> The player works on all devices. Press play and enjoy your healing journey.</p>
+            <p>🔖 <strong>Bookmark this page</strong> to access your exclusive tracks anytime.</p>
+            <p>👂 <strong>Headphones recommended</strong> for binaural beats (639 Hz track).</p>
         </div>
 
-        <div class="track-info">
-            <h2>🌱 Root Chakra Release | 396 Hz</h2>
-            <p>Classic guitar • Release negative emotions • Inner peace • 8 min</p>
+        <div class="tracks-description">
+            <h2>🎵 Seven Healing Journeys (2 hours 11 minutes)</h2>
+            <ul class="track-list">
+                <li><strong>🌱 Root Chakra Release | 396 Hz</strong> - Release negative emotions (8 min)</li>
+                <li><strong>🌍 Earth Connection | 432 Hz</strong> - Om mantra & nature sounds (30 min)</li>
+                <li><strong>🎋 Deep Relaxation | 432 Hz</strong> - Shakuhachi flute & Schumann Resonance (30 min)</li>
+                <li><strong>⚡ Solar Power | 528 Hz</strong> - Positivity & focus (6 min)</li>
+                <li><strong>🌺 Nature's Healing | 528 Hz</strong> - Ukulele & delta waves (10 min)</li>
+                <li><strong>💚 Heart Chakra Opening | 639 Hz</strong> - Harmony & relationships (15 min)</li>
+                <li><strong>🔮 Third Eye Activation | 852 Hz</strong> - Intuition & higher self (32 min)</li>
+            </ul>
         </div>
 
         <div class="soundcloud-player">
             <iframe 
                 width="100%" 
-                height="166" 
+                height="450" 
                 scrolling="no" 
                 frameborder="no" 
                 allow="autoplay" 
-                src="https://w.soundcloud.com/player/?url=https://soundcloud.com/frequenciesforthesoul/1_396root&color=%238fa889&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
+                src="https://w.soundcloud.com/player/?url=https://soundcloud.com/frequenciesforthesoul/sets/frequencies-for-the-soul-by&color=%238fa889&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
             </iframe>
+        </div>
+
+        <div class="bookmark-notice">
+            <p>🔗 Bookmark this page to easily return to your healing sessions</p>
+        </div>
+
+        <div class="donate-section">
+            <h3>🌿 Support the Healing</h3>
+            <p>If my music has brought you peace, healing, or joy...<br>Please consider offering a donation to support this work.</p>
+            <a href="https://donate.stripe.com/cN25n7adAcypaOcbII" target="_blank" class="donate-btn">
+                💚 Donate with Love
+            </a>
         </div>
 
         <div class="back-link">
