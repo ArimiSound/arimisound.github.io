@@ -164,7 +164,7 @@
             </div>
         </section>
 
-        <!-- Insight Timer Embedded Players - ADDED BEFORE YOUTUBE -->
+        <!-- Insight Timer Embedded Players - ONLY 3 PLAYERS -->
         <section class="video-section">
             <h2 class="video-title">Featured Healing Sessions on Insight Timer</h2>
             
@@ -178,14 +178,6 @@
 
             <div style="position: relative; overflow: hidden; margin-bottom: 1.5rem;">
                 <iframe style="border-radius:16px; display:block;" width="100%" height="250px" scrolling="no" tabindex="-1" title="Insight Timer Embed: Insomnia Therapy With Delta Waves And Nature Sounds (#3) | Arimi | Frequencies for the Soul" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://widgets.insighttimer.com/track/insomnia-therapy-with-delta-waves-and-nature-sounds-3?created_at=1773135415&cid=cq9BTgtXZNP4gS7QvdQnVRFrF1C3"></iframe>
-            </div>
-
-            <div style="position: relative; overflow: hidden; margin-bottom: 1.5rem;">
-                <iframe style="border-radius:16px; display:block;" width="100%" height="250px" scrolling="no" tabindex="-1" title="Insight Timer Embed: Healing The Body Gently With The 285 Hz Solfeggio Frequency | Arimi | Frequencies for the Soul" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://widgets.insighttimer.com/track/healing-the-body-gently-with-the-285-hz-solfeggio-frequency?created_at=1773135453&cid=cq9BTgtXZNP4gS7QvdQnVRFrF1C3"></iframe>
-            </div>
-
-            <div style="position: relative; overflow: hidden; margin-bottom: 1.5rem;">
-                <iframe style="border-radius:16px; display:block;" width="100%" height="250px" scrolling="no" tabindex="-1" title="Insight Timer Embed: Unwind With Gentle Guitar + Delta Waves (1Hz Binaural Beats) | Arimi | Frequencies for the Soul" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://widgets.insighttimer.com/track/unwind-with-gentle-guitar-delta-waves-1hz-binaural-beats?created_at=1773135537&cid=cq9BTgtXZNP4gS7QvdQnVRFrF1C3"></iframe>
             </div>
         </section>
 
@@ -253,50 +245,5 @@
     </div>
 
     <script src="script.js"></script>
-    
-    <!-- SCROLL FIX FOR INSIGHT TIMER EMBEDS -->
-    <script>
-    (function() {
-        let savedScrollPosition = 0;
-        let isUserScrolling = false;
-        
-        // Save scroll position on user interaction
-        window.addEventListener('scroll', function() {
-            if (isUserScrolling) {
-                savedScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-            }
-        }, { passive: true });
-        
-        // Mark when user is actively scrolling
-        window.addEventListener('wheel', function() {
-            isUserScrolling = true;
-        }, { passive: true });
-        
-        window.addEventListener('touchmove', function() {
-            isUserScrolling = true;
-        }, { passive: true });
-        
-        // Prevent unwanted scroll from iframes
-        function preventUnwantedScroll() {
-            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-            
-            // If scroll changed without user action, restore it
-            if (!isUserScrolling && Math.abs(currentScroll - savedScrollPosition) > 10) {
-                window.scrollTo(0, savedScrollPosition);
-            }
-            
-            // Reset flag after a delay
-            setTimeout(function() {
-                isUserScrolling = false;
-            }, 100);
-        }
-        
-        // Monitor scroll every 50ms
-        setInterval(preventUnwantedScroll, 50);
-        
-        // Initialize saved position
-        savedScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-    })();
-    </script>
 </body>
 </html>
