@@ -1,47 +1,302 @@
-// SCROLL FIX PARA INSIGHT TIMER EMBEDS
-// Si el problema de scroll persiste, añade este script al final del body en index.html
-
-// Prevenir que iframes de Insight Timer hagan scroll automático
-document.addEventListener('DOMContentLoaded', function() {
-    // Encontrar todos los iframes de Insight Timer
-    const insightTimerIframes = document.querySelectorAll('iframe[src*="insighttimer.com"]');
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arimi | Sound Healer - Frequencies for the Soul</title>
+    <meta name="description" content="Sound healing with Solfeggio frequencies, binaural beats, and isochronic tones. Experience deep relaxation, healing, and spiritual transformation through therapeutic sound.">
     
-    // Para cada iframe
-    insightTimerIframes.forEach(iframe => {
-        // Prevenir scroll cuando el iframe toma focus
-        iframe.addEventListener('focus', function(e) {
-            e.preventDefault();
-        });
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://musicforthesoul.live/">
+    <meta property="og:title" content="Arimi Sound Healer | Healing Frequencies & Sound Therapy">
+    <meta property="og:description" content="Experience deep healing through Solfeggio frequencies (528 Hz, 432 Hz), binaural beats, and live guitar sessions. Join thousands on Insight Timer for transformative sound journeys.">
+    <meta property="og:image" content="https://musicforthesoul.live/profile.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://musicforthesoul.live/">
+    <meta property="twitter:title" content="Arimi Sound Healer | Healing Frequencies & Sound Therapy">
+    <meta property="twitter:description" content="Experience deep healing through Solfeggio frequencies (528 Hz, 432 Hz), binaural beats, and live guitar sessions. Join thousands on Insight Timer.">
+    <meta property="twitter:image" content="https://musicforthesoul.live/profile.jpg">
+    
+    <link rel="icon" type="image/jpeg" href="profile.jpg">
+    <link rel="apple-touch-icon" href="profile.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated background -->
+    <div class="background-waves"></div>
+    
+    <div class="container">
+        <!-- Header Section -->
+        <header class="hero">
+            <div class="profile-image-wrapper">
+                <img src="profile.jpg" alt="Arimi Sound Healer" class="profile-image">
+                <div class="sound-ripple"></div>
+                <div class="sound-ripple" style="animation-delay: 0.5s;"></div>
+                <div class="sound-ripple" style="animation-delay: 1s;"></div>
+            </div>
+            
+            <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="rating-count">(28)</span>
+            </div>
+            
+            <h1 class="main-title">Arimi | Sound Healer</h1>
+            <p class="subtitle">Frequencies for the Soul | Solfeggio and other healing frequencies, Binaural Beats & Isochronic Tones</p>
+            
+            <!-- Social Links - REORDERED: Insight Timer, TikTok, YouTube -->
+            <div class="social-links">
+                <a href="https://insig.ht/oBiiWLP9I0b" target="_blank" class="social-btn" aria-label="Insight Timer">
+                    <img src="insight-timer-icon.png" alt="Insight Timer" class="social-icon-img">
+                    Insight Timer
+                </a>
+                <a href="https://www.tiktok.com/@sound.soul.healer" target="_blank" class="social-btn" aria-label="TikTok">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                    </svg>
+                    TikTok
+                </a>
+                <a href="https://www.youtube.com/@sound.soul.healer" target="_blank" class="social-btn" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                    YouTube
+                </a>
+            </div>
+        </header>
+
+        <!-- Donation CTA -->
+        <section class="cta-card featured">
+            <div class="cta-icon">🌿</div>
+            <h3>If my music has brought you peace, healing, or joy</h3>
+            <p>Please consider offering a donation. Every contribution, big or small, fuels this mission and keeps the frequencies flowing. 🙏🏼✨ Thank you for your kindness and support 💛</p>
+            <a href="https://donate.stripe.com/cN25n7adAcypaOcbII" target="_blank" class="btn btn-primary">
+                Donate
+            </a>
+        </section>
+
+        <!-- Welcome Section -->
+        <section class="content-card">
+            <div class="card-header collapsed" onclick="toggleCard(this)">
+                <h2>Welcome, dear soul. I'm Arimi.</h2>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="card-content">
+                <p>If you're on this page you're probably already aware that through <span class="highlight">Sound Healing</span> we can achieve some incredible things. By the transformative power of <span class="highlight">sound and frequency</span>, you can find peace in yourself, heal your spirit, and expand your consciousness.</p>
+                
+                <p>Scientific research has increased massively in this field, harvesting results that confirm the power of sound as a <strong>therapeutic tool</strong>.</p>
+                
+                <p>Something I've observed through your much appreciated feedbacks, is that there is a great variety of responses to sound healing, from person to person.</p>
+                
+                <p><strong>Aren't you curious to know why?</strong></p>
+                
+                <p>The fact is that for sound therapy to work, two components are required. On one side, a skilled musician, expert on <span class="highlight">healing frequencies</span> and <span class="highlight">brainwave entrainment</span> techniques.</p>
+                
+                <p>On the other side, <strong>equally important</strong>, there is you, and your <strong>willingness</strong> to be healed, your <strong>openness</strong> to let the frequencies permeate your body and soul, allowing them to do their job. If both elements are not present during a session, you may simply experience a mild sense of relaxation.</p>
+                
+                <p>If you're amongst the hundreds of women and men of any age who have told me about the great benefits experienced during my lives or after listening to my tracks, it's because <strong>you also did your part. Let me congratulate you for that</strong>.</p>
+                
+                <p class="signature"><em>Arimi Sound Healer</em></p>
+            </div>
+        </section>
+
+        <!-- Journey Section -->
+        <section class="content-card">
+            <div class="card-header collapsed" onclick="toggleCard(this)">
+                <h2>My Journey as a Sound Healer: From Ego to Service</h2>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="card-content">
+                <p>For over <strong>40 years</strong>, I played guitar, but for much of that time, I was playing from my <strong>ego</strong> rather than from a desire to serve others. Since the ego is rarely satisfied, I eventually found myself abandoning my instruments altogether, disconnected from the music that had once been such an important part of my life.</p>
+                
+                <p>Several years ago, during a period marked by <strong>grief and difficult life changes</strong>, I turned to spiritual teachers for guidance. I was seeking to understand why I lived in a constant state of stress; I was also searching for hope in my healing journey from <strong>arthritis</strong>, a condition I had battled for decades. These mentors inspired me profoundly, opening my eyes to a fundamental truth: <span class="highlight">we ourselves are often the greatest obstacles to our own happiness and fulfillment</span>.</p>
+                
+                <p>All of a sudden I realized that my musical gift wasn't just a personal talent—<strong>it could become my way of helping many people feel better and live more fully</strong>. This revelation reignited my musical passion with greater intensity than ever before, guiding me into a fascinating exploration of <span class="highlight">sound's healing powers</span>.</p>
+                
+                <p>Today, hearing the feedback from participants after the sound healing sessions I offer brings me my greatest satisfaction as both a musician and healer. This work has taught me that when we shift from <strong>serving our ego</strong> to <strong>serving others</strong>, our gifts find their truest expression and purpose. Music has become my <span class="highlight">medicine</span>—not just for myself, but for all those who allow these healing vibrations to wash over them, bringing <span class="benefit">peace, restoration, and renewal</span> to their lives.</p>
+            </div>
+        </section>
+
+        <!-- Healing Sounds Section -->
+        <section class="content-card">
+            <div class="card-header collapsed" onclick="toggleCard(this)">
+                <h2>My Healing Sounds</h2>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="card-content">
+                <p><strong>Solfeggio Frequencies</strong> (<span class="frequency">396 Hz</span>, <span class="frequency">528 Hz</span>, <span class="frequency">963 Hz</span> and more) to help you release negative emotions, unlock love, and connect with higher realms of awareness.</p>
+                
+                <p><strong>Isochronic Tones</strong> including:</p>
+                <ul>
+                    <li><strong>Delta, Theta or Alpha</strong> waves for <span class="benefit">rest, sleep, meditation, deep healing</span></li>
+                    <li><strong>Schumann Resonance (<span class="frequency">7.83 Hz</span>)</strong> to ground you to the Earth's natural rhythm, restoring balance and inner harmony</li>
+                    <li><strong>Shamanic frequencies</strong> to access <span class="benefit">altered states of consciousness</span> and deeper layers of self-healing</li>
+                    <li><strong>Gamma Waves</strong> to increase <span class="benefit">focus, memory recall, sensory perception</span> and processing speed</li>
+                </ul>
+                
+                <p>I also create <strong>Binaural Beats</strong> to support deep sleep, inner healing, transcendence and restoration.</p>
+                
+                <p>The <span class="highlight">sound journeys</span> I offer—whether live, recorded, or in-person—are crafted to help you:</p>
+                <ul>
+                    <li><span class="benefit">Release stress, anxiety, and emotional blockages</span></li>
+                    <li><span class="benefit">Access deep relaxation and restful sleep</span></li>
+                    <li><span class="benefit">Enhance mental clarity and focus</span></li>
+                    <li><span class="benefit">Reconnect with your inner joy and peace</span></li>
+                    <li><span class="benefit">Facilitate profound healing</span> of the body, mind, and soul</li>
+                </ul>
+                
+                <p>You can experience my healing work through:</p>
+                <ul>
+                    <li>🌿 <strong>Live Sound Healing Sessions</strong> on TikTok and Insight Timer</li>
+                    <li>📚 Through my <strong>playlists on TikTok or Insight Timer</strong>, where you can also find an Audio Course to deepen your understanding of the Solfeggio Frequencies</li>
+                    <li>🤲🏼 <strong>1:1 Personalized Sound Healing Sessions</strong> to meet your unique needs and intentions. You can send me an e-mail at arimisoundhealer at proton dot me</li>
+                    <li>🌌 <strong>Retreats</strong> where we'll immerse in these frequencies and curated sounds while benefiting of a powerful vibrational connection</li>
+                </ul>
+                
+                <p>I'm honored to walk this path of healing with you. Your journey matters, and your soul deserves the gift of <span class="benefit">harmony, balance, and joy</span>.</p>
+                
+                <p>Thank you for allowing me to share this with you. 🙏🏼✨</p>
+            </div>
+        </section>
+
+        <!-- Insight Timer Embedded Players - ADDED BEFORE YOUTUBE -->
+        <section class="video-section">
+            <h2 class="video-title">Featured Healing Sessions on Insight Timer</h2>
+            
+            <div style="position: relative; overflow: hidden; margin-bottom: 1.5rem;">
+                <iframe style="border-radius:16px; display:block;" width="100%" height="250px" scrolling="no" tabindex="-1" title="Insight Timer Embed: Insomnia Therapy With Delta Waves And Nature Sounds (#1) | Arimi | Frequencies for the Soul" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://widgets.insighttimer.com/track/insomnia-therapy-with-delta-waves-and-nature-sounds-1?created_at=1773135298&cid=cq9BTgtXZNP4gS7QvdQnVRFrF1C3"></iframe>
+            </div>
+
+            <div style="position: relative; overflow: hidden; margin-bottom: 1.5rem;">
+                <iframe style="border-radius:16px; display:block;" width="100%" height="250px" scrolling="no" tabindex="-1" title="Insight Timer Embed: Insomnia Therapy With Delta Waves And Nature Sounds (#2) | Arimi | Frequencies for the Soul" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://widgets.insighttimer.com/track/insomnia-therapy-with-delta-waves-and-nature-sounds-2?created_at=1773135388&cid=cq9BTgtXZNP4gS7QvdQnVRFrF1C3"></iframe>
+            </div>
+
+            <div style="position: relative; overflow: hidden; margin-bottom: 1.5rem;">
+                <iframe style="border-radius:16px; display:block;" width="100%" height="250px" scrolling="no" tabindex="-1" title="Insight Timer Embed: Insomnia Therapy With Delta Waves And Nature Sounds (#3) | Arimi | Frequencies for the Soul" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://widgets.insighttimer.com/track/insomnia-therapy-with-delta-waves-and-nature-sounds-3?created_at=1773135415&cid=cq9BTgtXZNP4gS7QvdQnVRFrF1C3"></iframe>
+            </div>
+
+            <div style="position: relative; overflow: hidden; margin-bottom: 1.5rem;">
+                <iframe style="border-radius:16px; display:block;" width="100%" height="250px" scrolling="no" tabindex="-1" title="Insight Timer Embed: Healing The Body Gently With The 285 Hz Solfeggio Frequency | Arimi | Frequencies for the Soul" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://widgets.insighttimer.com/track/healing-the-body-gently-with-the-285-hz-solfeggio-frequency?created_at=1773135453&cid=cq9BTgtXZNP4gS7QvdQnVRFrF1C3"></iframe>
+            </div>
+
+            <div style="position: relative; overflow: hidden; margin-bottom: 1.5rem;">
+                <iframe style="border-radius:16px; display:block;" width="100%" height="250px" scrolling="no" tabindex="-1" title="Insight Timer Embed: Unwind With Gentle Guitar + Delta Waves (1Hz Binaural Beats) | Arimi | Frequencies for the Soul" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://widgets.insighttimer.com/track/unwind-with-gentle-guitar-delta-waves-1hz-binaural-beats?created_at=1773135537&cid=cq9BTgtXZNP4gS7QvdQnVRFrF1C3"></iframe>
+            </div>
+        </section>
+
+        <!-- Featured Video Section -->
+        <section class="video-section">
+            <h2 class="video-title">Experience a Sound Healing Session</h2>
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/PLB3YwTZ_mc" 
+                    title="Sound Healing Session by Arimi"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-caption">🎵 A glimpse into the transformative power of healing frequencies</p>
+        </section>
+
+        <!-- Links Section -->
+        <div class="links-grid">
+            <a href="testimonials.html" class="link-card">
+                <div class="link-icon">📖</div>
+                <div class="link-content">
+                    <h3>Testimonials</h3>
+                    <p>Read healing stories from our community</p>
+                </div>
+            </a>
+
+            <!-- Mercedes Event Section - REPLACES Odysee -->
+            <div class="link-card" style="display: block; text-align: left;">
+                <a href="https://www.skool.com/somatic/about?ref=e886d0261eac4ca283ab2e55c16d452e" target="_blank" style="display: block; text-decoration: none;">
+                    <img src="mercedes-event.png" alt="The 5-Minute Somatic Grounding Summit" style="width: 100%; max-width: 600px; display: block; margin: 0 auto 1.5rem auto; border-radius: 12px; cursor: pointer; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                </a>
+                
+                <div class="link-icon" style="text-align: center;">🌟</div>
+                
+                <div class="link-content">
+                    <h3 style="text-align: center;">The 5-Minute Somatic Grounding Summit</h3>
+                    <p>I present my <strong>After-Cry Humming technique</strong> at The 5-Minute Somatic Grounding Summit.</p>
+                    <p style="margin-top: 0.8rem;">This summit brings together 30+ practitioners, each sharing one short, body-based grounding practice. All sessions are 5 minutes or under and will be available from the 23rd of March inside The Somatic Reset Lab community created on Skool by Mercedes Aspland, whose invitation I answered gladly.</p>
+                    <p style="margin-top: 1rem; text-align: center;">
+                        <a href="https://www.skool.com/somatic/about?ref=e886d0261eac4ca283ab2e55c16d452e" target="_blank" style="display: inline-block; background: var(--gradient-accent); color: white; padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
+                            Join the Somatic Reset Lab for free access →
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Support Section -->
+        <section class="cta-card">
+            <h3>Thank you for your presence and support</h3>
+            <p>If you felt happier, healthier, with less pain, stress, or anxiety, or if you experienced emotional blockages dissolve or get lighter, I ask you to please support my work, through an easy-to-use and secure card payments interface. Name the price to your experience. Thank you from the bottom of my heart.</p>
+            <p class="support-note">ps. if you experience any issue during the donation process, please kindly let me know at arimisoundhealer@proton.me</p>
+            <a href="https://donate.stripe.com/cN25n7adAcypaOcbII" target="_blank" class="btn btn-secondary">
+                Support Arimi
+            </a>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 Arimi Sound Healer. All rights reserved.</p>
+            <p>With love and frequencies 🙏🏼✨</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <!-- SCROLL FIX FOR INSIGHT TIMER EMBEDS -->
+    <script>
+    (function() {
+        let savedScrollPosition = 0;
+        let isUserScrolling = false;
         
-        // Guardar posición de scroll antes de interactuar
-        let scrollPos = 0;
-        
-        iframe.addEventListener('mouseenter', function() {
-            scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-        });
-        
-        // Restaurar posición si cambió
-        iframe.addEventListener('blur', function() {
-            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-            if (Math.abs(currentScroll - scrollPos) > 50) {
-                window.scrollTo(0, scrollPos);
+        // Save scroll position on user interaction
+        window.addEventListener('scroll', function() {
+            if (isUserScrolling) {
+                savedScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
             }
-        });
-    });
-    
-    // Prevenir scroll automático global
-    let isScrolling = false;
-    window.addEventListener('scroll', function() {
-        if (!isScrolling) {
-            // Usuario está haciendo scroll normalmente
+        }, { passive: true });
+        
+        // Mark when user is actively scrolling
+        window.addEventListener('wheel', function() {
+            isUserScrolling = true;
+        }, { passive: true });
+        
+        window.addEventListener('touchmove', function() {
+            isUserScrolling = true;
+        }, { passive: true });
+        
+        // Prevent unwanted scroll from iframes
+        function preventUnwantedScroll() {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // If scroll changed without user action, restore it
+            if (!isUserScrolling && Math.abs(currentScroll - savedScrollPosition) > 10) {
+                window.scrollTo(0, savedScrollPosition);
+            }
+            
+            // Reset flag after a delay
+            setTimeout(function() {
+                isUserScrolling = false;
+            }, 100);
         }
-    }, { passive: true });
-});
-
-// INSTRUCCIONES DE USO:
-// 1. Abre index.html
-// 2. Busca la línea: <script src="script.js"></script>
-// 3. ANTES de esa línea, añade:
-//    <script>
-//    [pega este código aquí]
-//    </script>
+        
+        // Monitor scroll every 50ms
+        setInterval(preventUnwantedScroll, 50);
+        
+        // Initialize saved position
+        savedScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    })();
+    </script>
+</body>
+</html>
