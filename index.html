@@ -80,6 +80,24 @@
             </a>
         </section>
 
+        <!-- Upcoming Event (auto-loaded from Google Sheets) -->
+        <section class="content-card" id="upcoming-event" style="display: none;">
+            <div style="text-align: center; padding: 0.5rem 0 1rem;">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎶</div>
+                <h2 style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 300; color: var(--text-dark);">Upcoming Event</h2>
+            </div>
+            <div id="event-card" style="border-left: 3px solid var(--accent-sage); padding-left: 1.2rem; margin-bottom: 1.5rem;">
+                <h3 id="event-title" style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 400; margin-bottom: 0.3rem;"></h3>
+                <p id="event-date" style="color: var(--accent-sage); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.5rem;"></p>
+                <p id="event-desc" style="color: var(--text-medium, #6B5E54); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;"></p>
+            </div>
+            <div style="text-align: center;">
+                <a id="event-link" href="#" target="_blank" class="btn btn-primary" style="display: inline-block; background: var(--gradient-accent); color: white; padding: 0.85rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+                    Join on Insight Timer →
+                </a>
+            </div>
+        </section>
+
         <!-- Welcome Section -->
         <section class="content-card">
             <div class="card-header collapsed" onclick="toggleCard(this)">
@@ -244,5 +262,35 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+    // Auto-load upcoming event from Google Sheets
+    (function() {
+        var url = 'https://script.google.com/macros/s/AKfycbx01dOUqEX-gppsBqrkqoNdsWh0fIKGqXnbyl0DEwxXxJgvnDQqcgTZCkiCTDjwJUf9/exec?action=getEvent';
+        fetch(url)
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.status === 'success' && data.event) {
+                    var ev = data.event;
+                    var d = new Date(ev.date);
+                    var dateStr = d.toLocaleDateString('en-US', {
+                        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+                    });
+                    var timeStr = d.toLocaleTimeString('en-US', {
+                        hour: 'numeric', minute: '2-digit'
+                    });
+                    document.getElementById('event-title').textContent = ev.title;
+                    document.getElementById('event-date').textContent = dateStr + ' at ' + timeStr;
+                    if (ev.description) {
+                        document.getElementById('event-desc').textContent = ev.description;
+                    } else {
+                        document.getElementById('event-desc').style.display = 'none';
+                    }
+                    document.getElementById('event-link').href = ev.link;
+                    document.getElementById('upcoming-event').style.display = 'block';
+                }
+            })
+            .catch(function() {});
+    })();
+    </script>
 </body>
 </html>
