@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arimi Admin - Event Manager</title>
+    <link rel="icon" type="image/jpeg" href="profile.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-cream: #F5F1E8;
+            --accent-sage: #8FA889;
+            --accent-sage-dark: #7A9574;
+            --accent-terracotta: #C9A98E;
+            --text-dark: #3D3530;
+            --text-medium: #6B5E54;
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Lora', serif;
+            --gradient-accent: linear-gradient(135deg, #8FA889, #7A9574);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--primary-cream);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2rem 1rem;
+        }
+
+        .admin-container {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            backdrop-filter: blur(10px);
+        }
+
+        .card h2 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 1.2rem;
+            color: var(--accent-sage-dark);
+        }
+
+        label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--text-medium);
+        }
+
+        input[type="text"],
+        input[type="datetime-local"],
+        textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1.5px solid rgba(143, 168, 137, 0.3);
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            background: white;
+            margin-bottom: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-sage);
+        }
+
+        textarea { resize: vertical; min-height: 80px; }
+
+        .btn {
+            display: inline-block;
+            padding: 0.85rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-publish {
+            background: var(--gradient-accent);
+            color: white;
+            width: 100%;
+        }
+
+        .btn-publish:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(143, 168, 137, 0.4); }
+
+        .btn-remove {
+            background: transparent;
+            color: var(--accent-terracotta);
+            border: 1.5px solid var(--accent-terracotta);
+            width: 100%;
+            margin-top: 0.8rem;
+        }
+
+        .btn-remove:hover { background: var(--accent-terracotta); color: white; }
+
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+        /* Login screen */
+        .login-card {
+            text-align: center;
+            margin-top: 20vh;
+        }
+
+        .login-card input {
+            max-width: 280px;
+            margin: 0 auto 1rem;
+            text-align: center;
+        }
+
+        .login-card .btn { max-width: 280px; }
+
+        .error-msg {
+            color: #c0392b;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Current event display */
+        .current-event {
+            border-left: 3px solid var(--accent-sage);
+            padding-left: 1.2rem;
+        }
+
+        .current-event h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 0.4rem;
+        }
+
+        .current-event .event-date {
+            color: var(--accent-sage-dark);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .current-event .event-desc {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+
+        .current-event .event-link a {
+            color: var(--accent-sage);
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .no-event {
+            color: var(--text-medium);
+            font-style: italic;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .status-msg {
+            text-align: center;
+            padding: 0.8rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .status-success { background: rgba(143, 168, 137, 0.15); color: var(--accent-sage-dark); }
+        .status-error { background: rgba(192, 57, 43, 0.1); color: #c0392b; }
+
+        .hidden { display: none; }
+
+        @media (max-width: 480px) {
+            body { padding: 1rem 0.75rem; }
+            .card { padding: 1.5rem; }
+            h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="admin-container">
+    <!-- LOGIN SCREEN -->
+    <div id="login-screen">
+        <div class="card login-card">
+            <h1>🌿 Arimi Admin</h1>
+            <p class="subtitle">Event Manager</p>
+            <div id="login-error" class="error-msg hidden"></div>
+            <input type="password" id="password-input" placeholder="Enter password" onkeydown="if(event.key==='Enter') login()">
+            <br>
+            <button class="btn btn-publish" onclick="login()" style="max-width: 280px;">Enter</button>
+        </div>
+    </div>
+
+    <!-- ADMIN PANEL -->
+    <div id="admin-panel" class="hidden">
+        <h1>🌿 Arimi Admin</h1>
+        <p class="subtitle">Publish events to your website</p>
+
+        <div id="status-msg" class="hidden"></div>
+
+        <!-- Current Event -->
+        <div class="card">
+            <h2>Current Event on Site</h2>
+            <div id="current-event-display">
+                <p class="no-event">Loading...</p>
+            </div>
+            <button class="btn btn-remove hidden" id="remove-btn" onclick="removeEvent()">Remove Event from Site</button>
+        </div>
+
+        <!-- Publish New Event -->
+        <div class="card">
+            <h2>Publish New Event</h2>
+            <form id="event-form" onsubmit="publishEvent(event)">
+                <label for="event-title">Event Title *</label>
+                <input type="text" id="event-title" placeholder="e.g. Live Sound Healing Session" required>
+
+                <label for="event-date">Date & Time *</label>
+                <input type="datetime-local" id="event-date" required>
+
+                <label for="event-desc">Short Description (optional)</label>
+                <textarea id="event-desc" placeholder="e.g. Join me for a 45-minute healing journey with 528 Hz frequencies..."></textarea>
+
+                <label for="event-link">Insight Timer Link *</label>
+                <input type="text" id="event-link" placeholder="https://insig.ht/..." required>
+
+                <button type="submit" class="btn btn-publish" id="publish-btn">Publish Event</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx01dOUqEX-gppsBqrkqoNdsWh0fIKGqXnbyl0DEwxXxJgvnDQqcgTZCkiCTDjwJUf9/exec';
+const PASSWORD = 'arimi2026';
+
+function login() {
+    const input = document.getElementById('password-input');
+    const errorEl = document.getElementById('login-error');
+    if (input.value === PASSWORD) {
+        document.getElementById('login-screen').classList.add('hidden');
+        document.getElementById('admin-panel').classList.remove('hidden');
+        loadCurrentEvent();
+    } else {
+        errorEl.textContent = 'Incorrect password';
+        errorEl.classList.remove('hidden');
+        input.value = '';
+        input.focus();
+    }
+}
+
+function showStatus(message, isError) {
+    const el = document.getElementById('status-msg');
+    el.textContent = message;
+    el.className = isError ? 'status-msg status-error' : 'status-msg status-success';
+    el.classList.remove('hidden');
+    setTimeout(() => el.classList.add('hidden'), 5000);
+}
+
+async function loadCurrentEvent() {
+    const display = document.getElementById('current-event-display');
+    const removeBtn = document.getElementById('remove-btn');
+    try {
+        const response = await fetch(APPS_SCRIPT_URL + '?action=getEvent');
+        const data = await response.json();
+        if (data.status === 'success' && data.event) {
+            const ev = data.event;
+            const dateStr = new Date(ev.date).toLocaleString('en-US', {
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+                hour: 'numeric', minute: '2-digit'
+            });
+            display.innerHTML = `
+                <div class="current-event">
+                    <h3>${escapeHtml(ev.title)}</h3>
+                    <div class="event-date">${dateStr}</div>
+                    ${ev.description ? `<div class="event-desc">${escapeHtml(ev.description)}</div>` : ''}
+                    <div class="event-link"><a href="${escapeHtml(ev.link)}" target="_blank">View on Insight Timer ↗</a></div>
+                </div>
+            `;
+            removeBtn.classList.remove('hidden');
+        } else {
+            display.innerHTML = '<p class="no-event">No event currently published</p>';
+            removeBtn.classList.add('hidden');
+        }
+    } catch (err) {
+        display.innerHTML = '<p class="no-event">Could not load event. Check your connection.</p>';
+        removeBtn.classList.add('hidden');
+    }
+}
+
+async function publishEvent(e) {
+    e.preventDefault();
+    const btn = document.getElementById('publish-btn');
+    btn.disabled = true;
+    btn.textContent = 'Publishing...';
+
+    const payload = {
+        type: 'event',
+        action: 'publish',
+        title: document.getElementById('event-title').value.trim(),
+        date: document.getElementById('event-date').value,
+        description: document.getElementById('event-desc').value.trim(),
+        link: document.getElementById('event-link').value.trim()
+    };
+
+    try {
+        await fetch(APPS_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+        showStatus('Event published! It will appear on your site shortly.', false);
+        document.getElementById('event-form').reset();
+        setTimeout(loadCurrentEvent, 2000);
+    } catch (err) {
+        showStatus('Error publishing event. Please try again.', true);
+    }
+
+    btn.disabled = false;
+    btn.textContent = 'Publish Event';
+}
+
+async function removeEvent() {
+    const btn = document.getElementById('remove-btn');
+    if (!confirm('Remove the current event from your website?')) return;
+    btn.disabled = true;
+    btn.textContent = 'Removing...';
+
+    try {
+        await fetch(APPS_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ type: 'event', action: 'remove' })
+        });
+        showStatus('Event removed from your site.', false);
+        setTimeout(loadCurrentEvent, 2000);
+    } catch (err) {
+        showStatus('Error removing event. Please try again.', true);
+    }
+
+    btn.disabled = false;
+    btn.textContent = 'Remove Event from Site';
+}
+
+function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+}
+</script>
+
+</body>
+</html>
