@@ -269,7 +269,7 @@
 </div>
 
 <script>
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx01dOUqEX-gppsBqrkqoNdsWh0fIKGqXnbyl0DEwxXxJgvnDQqcgTZCkiCTDjwJUf9/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby6jr4PwxTg7LoD_kOth4it76CJ-oqBRpVnYXsV5jcUgJal4Z5-ZpgH2UtXDFW0OQf6/exec';
 const PASSWORD = 'arimi2026';
 
 function login() {
