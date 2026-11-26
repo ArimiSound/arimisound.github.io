@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Tue Sessioni di Guarigione | Arimi Sound Healer</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <style>
+        :root {
+            --accent-sage: #8FA889;
+            --accent-terracotta: #C9A98E;
+            --text-dark: #3D3530;
+            --text-medium: #5C564F;
+            --gradient-accent: linear-gradient(135deg, #8FA889, #A8B89F);
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Lora', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: linear-gradient(135deg, #f5f1ed 0%, #e8e3dc 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .player-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .player-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .player-header h1 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-family: var(--font-display);
+        }
+
+        .player-header p {
+            color: var(--text-medium);
+            font-size: 1rem;
+        }
+
+        .player-notice {
+            background: rgba(168, 184, 159, 0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-sage);
+        }
+
+        .player-notice p {
+            margin: 0.3rem 0;
+            color: var(--text-medium);
+            font-size: 0.9rem;
+        }
+
+        .soundcloud-player {
+            margin: 2rem 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .tracks-description {
+            background: rgba(143, 168, 137, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .tracks-description h2 {
+            font-family: var(--font-display);
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .track-list {
+            list-style: none;
+        }
+
+        .track-list li {
+            padding: 0.5rem 0;
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(143, 168, 137, 0.2);
+        }
+
+        .track-list li:last-child {
+            border-bottom: none;
+        }
+
+        .track-list strong {
+            color: var(--text-dark);
+        }
+
+        .bookmark-notice {
+            background: rgba(201, 185, 150, 0.1);
+            padding: 0.8rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 1.5rem;
+            border: 1px solid var(--accent-terracotta);
+        }
+
+        .bookmark-notice p {
+            margin: 0;
+            color: var(--text-medium);
+            font-size: 0.85rem;
+        }
+
+        .donate-section {
+            background: var(--gradient-accent);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 2rem 0;
+            color: white;
+        }
+
+        .donate-section h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .donate-section p {
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .donate-btn {
+            display: inline-block;
+            background: white;
+            color: var(--accent-sage);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .donate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .back-link a {
+            color: var(--accent-sage);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .back-link a:hover {
+            color: var(--accent-terracotta);
+        }
+
+        @media (max-width: 768px) {
+            .player-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="player-container">
+
+        <div class="player-header">
+            <h1>✨ Le Tue Sessioni di Guarigione</h1>
+            <p>Grazie per far parte della nostra comunità di guarigione</p>
+        </div>
+
+        <div class="player-notice">
+            <p>📱 <strong>Suggerimento:</strong> Il player funziona su tutti i dispositivi. Premi play e goditi il tuo viaggio di guarigione.</p>
+            <p>🔊 <strong>Per ascoltare direttamente</strong> seleziona "Listen in Browser" nel player.</p>
+            <p>🔖 <strong>Salva questa pagina nei preferiti</strong> per accedere alle tue tracce esclusive in qualsiasi momento.</p>
+            <p>👂 <strong>Cuffie consigliate</strong> per i battiti binaurali (traccia a 639 Hz).</p>
+        </div>
+
+        <div class="tracks-description">
+            <h2>🎵 Sette Viaggi di Guarigione (2 ore e 11 minuti)</h2>
+            <ul class="track-list">
+                <li><strong>🌱 Rilascio del Chakra Radice | 396 Hz</strong> - Chitarra classica · Affermazioni incluse · Rilascio delle emozioni negative (8 min)</li>
+                <li><strong>🌍 Connessione con la Terra | 432 Hz</strong> - Mantra Om e suoni della natura (30 min)</li>
+                <li><strong>🎋 Rilassamento Profondo | 432 Hz</strong> - Flauto Shakuhachi e Risonanza Schumann (30 min)</li>
+                <li><strong>⚡ Energia Solare | 528 Hz</strong> - Positività e concentrazione (6 min)</li>
+                <li><strong>🌺 Guarigione della Natura | 528 Hz</strong> - Ukulele e onde delta (10 min)</li>
+                <li><strong>💚 Apertura del Chakra del Cuore | 639 Hz</strong> - Armonia e relazioni (15 min)</li>
+                <li><strong>🔮 Attivazione del Terzo Occhio | 852 Hz</strong> - Intuizione e sé superiore (32 min)</li>
+            </ul>
+        </div>
+
+        <div class="soundcloud-player">
+            <iframe
+                width="100%"
+                height="450"
+                scrolling="no"
+                frameborder="no"
+                allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/2194907648&color=%238fa889&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true">
+            </iframe>
+        </div>
+
+        <div class="bookmark-notice">
+            <p>🔗 Salva questa pagina nei preferiti per tornare facilmente alle tue sessioni di guarigione</p>
+        </div>
+
+        <div class="donate-section">
+            <h3>🌿 Sostieni la Guarigione</h3>
+            <p>Se la mia musica ti ha portato pace, guarigione o gioia...<br>Considera di fare una donazione per sostenere questo lavoro.</p>
+            <a href="https://donate.stripe.com/cN25n7adAcypaOcbII" target="_blank" class="donate-btn">
+                💚 Dona con Amore
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>
